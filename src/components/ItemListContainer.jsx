@@ -22,7 +22,7 @@ function ItemListContainer() {
 
   return (
     <Container>
-      <h5>{ categoryName ? 'Productos de la categoria: ' + categoryName : 'Todos los productos'}</h5>
+      <h5>{categoryName ? 'Productos de la categoria: ' + categoryName : 'Todos los productos'}</h5>
       <Row xs={1} md={2} lg={4} className='g-2'>
         <ItemList listado={productos}></ItemList>
       </Row>

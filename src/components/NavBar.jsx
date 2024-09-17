@@ -33,7 +33,7 @@ export default function NavBar() {
                 Categorias
               </a>
               <ul className="dropdown-menu">
-                {categorias.map(categoria => <li key={categoria}><a className="dropdown-item"  href={'/category/'+categoria}>{categoria}</a></li> )}
+                {categorias.map(categoria => <li key={categoria}><a className="dropdown-item" href={'/category/' + categoria}>{categoria}</a></li>)}
               </ul>
             </li>
             <li className="nav-item">

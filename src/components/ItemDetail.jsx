@@ -1,18 +1,21 @@
 import { Card } from 'react-bootstrap';
+import ItemCount from './ItemCount';
 
-function ItemDetail({ detalle = {} }) {
+function ItemDetail({ detail }) {
+
+  const count = 0; // iría la lógica cuando corresponda
 
   return (
-    <>
-      <Card className='p-0 mx-2' key={detalle.id}>
-        <img src={detalle.avatar} className="card-img-top p- m-0" alt={detalle.name}></img>
-        <Card.Body className='card-body'>
-          <h6>{detalle.name}</h6>
-          Precio: $ {detalle.price}<br />
-          <span className='badge text-bg-success float-end'>{detalle.category}</span>
-        </Card.Body>
-      </Card>
-    </>
+    <Card className='shadow-sm mx-auto' key={detail.id} style={{ maxWidth: '480px' }} >
+      <img src={detail.avatar} className="rounded mx-auto d-block card-img-top p-0 m-0 mw-50" alt={detail.name} />
+      <Card.Body className='card-body'>
+        <h6>{detail.name}</h6>
+        <p>{detail.description}</p>
+        Precio: $ {detail.price}<br />
+        <span className='badge text-bg-success float-end'>{detail.category}</span>
+        <ItemCount count={count}></ItemCount>
+      </Card.Body>
+    </Card>
   )
 }
 
