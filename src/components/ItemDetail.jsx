@@ -4,6 +4,7 @@ import ItemCount from './ItemCount';
 function ItemDetail({ detail }) {
 
   const count = 0; // iría la lógica cuando corresponda
+  const stock = 10; // iría la lógica cuando corresponda
 
   return (
     <Card className='shadow-sm mx-auto' key={detail.id} style={{ maxWidth: '480px' }} >
@@ -13,7 +14,7 @@ function ItemDetail({ detail }) {
         <p>{detail.description}</p>
         Precio: $ {detail.price}<br />
         <span className='badge text-bg-success float-end'>{detail.category}</span>
-        <ItemCount count={count}></ItemCount>
+        <ItemCount count={count} stock={stock}></ItemCount>
       </Card.Body>
     </Card>
   )
