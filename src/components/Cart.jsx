@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { CarritoContext } from "../context/CarritoContext";
+import { useCartContext } from "../context/CartContext";
 
 const Cart = () => {
-  const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
 
-  if (cantidadTotal === 0) {
+  const { cart, cleanCart, total, quantityTotal } = useCartContext();
+
+  if (quantityTotal === 0) {
     return (
       <div className="alert alert-danger">
         <p>No tienes productos en el carrito.</p>
@@ -14,17 +14,41 @@ const Cart = () => {
   }
 
   return (
-    <div>
-      {
-        carrito.map(producto => <CartItem key={producto.item.id} {...producto} />)
-      }
+    <div className="row">
 
-      <h3>Total: $ {total} </h3>
-      <h3>Cantidad Total: {cantidadTotal} </h3>
-      <button onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
-      <a href={'/checkout'}>Finalizar Compra</a>
+      <div className="col-md-6 col-sm-12">
+        {
+          cart.map(product => <CartItem key={product.id} {...product} />)
+        }
+
+        <h3>Total: $ {total} </h3>
+        <h3>Cantidad Total: {quantityTotal} </h3>
+        <button onClick={() => cleanCart()}>Vaciar Carrito</button>
+        <a href={'/checkout'}>Finalizar Compra</a>
+
+      </div>
+
+      <div className="col-md-6 col-sm-12">
+
+        <div class="input-group mb-3">
+          <span className="input-group-text" id="email">✉</span>
+          <input type="text" className="form-control" placeholder="Tu correo electrónico" aria-label="email" aria-describedby="email" />
+        </div>
+
+        <div class="input-group mb-3">
+          <span className="input-group-text" id="name">👉</span>
+          <input type="text" className="form-control" placeholder="Tu nombre completo" aria-label="name" aria-describedby="name" />
+        </div>
+
+        <div class="input-group mb-3">
+          <span className="input-group-text" id="phone">📞</span>
+          <input type="text" className="form-control" placeholder="Tu teléfono" aria-label="phone" aria-describedby="phone" />
+        </div>
+
+      </div>
+
     </div>
   )
 }
 
-export default Cart
+export default Cart;

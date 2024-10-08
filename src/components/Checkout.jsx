@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
-import { CarritoContext } from "../context/CarritoContext";
+import { useState } from "react";
+import { useCartContext } from "../context/CartContext";
 import config from "../services/config";
 
 const Checkout = () => {
-  const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
+  const { cart, cleanCart, total, quantityTotal } = useCartContext();
 
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
@@ -41,16 +41,6 @@ const Checkout = () => {
       email
     };
 
-    // Realizamos la solicitud POST al backend
-    config.post('/ordenes', orden)  // Cambia a '/api/ordenes'
-      .then(response => {
-        setOrdenId(response.data._id); // Suponiendo que el ID se devuelve en la respuesta del servidor
-        vaciarCarrito();
-      })
-      .catch(error => {
-        console.error('Error al realizar la compra:', error);
-        setError("Error al realizar la compra. Por favor, inténtalo de nuevo más tarde.");
-      });
   }
 
   return (

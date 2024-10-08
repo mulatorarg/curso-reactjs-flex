@@ -8,6 +8,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import NavBar from './components/NavBar.jsx';
 import Cart from "./components/Cart.jsx";
 import Checkout from "./components/Checkout.jsx";
+import { CartProvider } from "./context/CartProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,9 +39,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <NavBar />
-    <div className="container pb-2">
-      <RouterProvider router={router} />
-    </div>
+    <CartProvider>
+      <NavBar />
+      <div className="container pb-2">
+        <RouterProvider router={router} />
+      </div>
+    </CartProvider>
   </React.StrictMode>
 );
