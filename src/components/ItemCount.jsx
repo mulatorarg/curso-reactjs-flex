@@ -8,12 +8,12 @@ function ItemCount({ detail, count, stock }) {
 
   const [contador, setContador] = useState(count);
 
-  /** Sumar una unidad al contador para producto al carrito. */
+  /** Sumar una unidad al contador del producto agregar al carrito. */
   const btnIncrementar = () => {
     if (contador < stock) setContador(contador + 1);
   }
 
-  /** Restar una unidad al contador para producto al carrito. */
+  /** Restar una unidad al contador del producto agregar al carrito. */
   const btnDecrementar = () => {
     if (contador > 1) setContador(contador - 1);
   }
@@ -31,7 +31,7 @@ function ItemCount({ detail, count, stock }) {
       <button onClick={btnDecrementar} className="btn btn-sm btn-danger"> ➖ </button>
       <input type="text" className="form-control form-control-sm text-center" placeholder="" value={contador}  />
       <button onClick={btnIncrementar} className="btn btn-sm btn-success"> ➕ </button>
-      <button onClick={btnComprar()} className="btn btn-sm btn-primary"> Comprar </button>
+      <button onClick={btnComprar()} className="btn btn-sm btn-primary"> Agregar al Carrito </button>
     </div>
   )
 }
