@@ -9,22 +9,19 @@ function ItemCount({ detail, count, stock }) {
   const [contador, setContador] = useState(count);
 
   /** Sumar una unidad al contador del producto agregar al carrito. */
-  const btnIncrementar = () => {
+  function btnIncrementar () {
     if (contador < stock) setContador(contador + 1);
   }
 
   /** Restar una unidad al contador del producto agregar al carrito. */
-  const btnDecrementar = () => {
+  function btnDecrementar() {
     if (contador > 1) setContador(contador - 1);
   }
 
   /** Agregar unidades del producto al carrito. */
-  const btnComprar = () => {
+  function btnComprar () {
     addProduct(detail, contador);
   }
-
-  useEffect(() => {
-  }, [contador]);
 
   return (
     <div className="input-group mt-3 mx-auto shadow-sm" style={{ width: '120px!important' }}>
