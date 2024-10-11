@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
 import { getProduct } from '../firebase/db';
 
-
 export const ItemDetailContainer = () => {
 
   const [detail, setDetail] = useState(null);
@@ -29,7 +28,7 @@ export const ItemDetailContainer = () => {
           :
           <>
             {error && <h2>Ups, No se encontró el producto.</h2>}
-            {detail && <ItemDetail detail={detail} />}
+            {detail && <ItemDetail {...detail} />}
           </>
       }
 

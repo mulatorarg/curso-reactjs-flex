@@ -3,12 +3,17 @@ import { ItemCount } from "./ItemCount";
 import { CartContext } from "../context/CartContext";
 import Swal from "sweetalert2";
 
-export const ItemDetail = ({ detail }) => {
+export const ItemDetail = ({ id, name, description, category, thumbnail, price, stock }) => {
 
   const { addItem } = useContext(CartContext);
 
   const onAdd = (quantity) => {
-    addItem(detail, quantity)
+    const item = {
+      id,
+      price,
+      name
+    }
+    addItem(item, quantity)
     Swal.fire({
       icon: "success",
       title: "Se agrego el producto al carrito"
@@ -16,16 +21,18 @@ export const ItemDetail = ({ detail }) => {
   }
 
   return (
-    <div className='card shadow-sm mx-auto' key={detail.id} style={{ maxWidth: '480px' }} >
-      <img src={detail.thumbnail} className="rounded mx-auto d-block card-img-top p-0 m-0 mw-50" alt={detail.name} />
-      <div className='card-body'>
-        <h6>{detail.name}</h6>
-        <p>{detail.description}</p>
-        Precio: $ {detail.price}<br />
-        <span className='badge text-bg-success float-end'>{detail.category}</span><br />
-        <span className='badge text-bg-info float-end'>Stock Disp: {detail.stock}</span>
-        <ItemCount stock={detail.stock} onAdd={onAdd} />
+    <>
+      <div className='card shadow-sm mx-auto' key={id} style={{ maxWidth: '480px' }} >
+        <img src={thumbnail} className="rounded mx-auto d-block card-img-top p-0 m-0 mw-50" alt={name} />
+        <div className='card-body'>
+          <h6>{name}</h6>
+          <p>{description}</p>
+          Precio: $ {price}<br />
+          <span className='badge text-bg-success float-end'>{category}</span><br />
+          <span className='badge text-bg-info float-end'>Stock Disp: {stock}</span>
+          <ItemCount stock={stock} onAdd={onAdd} />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
