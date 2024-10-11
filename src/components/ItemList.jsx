@@ -8,7 +8,7 @@ function ItemList({ listado = [] }) {
         listado.map(producto =>
           <Col key={producto.id}>
             <Card className='shadow-sm'>
-              <img src={producto.avatar} className="rounded mx-auto d-block card-img-top p-0 m-0" alt={producto.name}></img>
+              <img src={producto.thumbnail} className="rounded mx-auto d-block card-img-top p-0 m-0" alt={producto.name}></img>
               <Card.Body>
                 <h6>{producto.name}</h6>
                 <p>Precio: $ {producto.price}</p>

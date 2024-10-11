@@ -1,20 +1,7 @@
 import React from "react";
-import { useEffect, useState } from 'react';
 import CartWidget from './CartWidget';
 
 export default function NavBar() {
-
-  const [categorias, setCategorias] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://66e84fadb17821a9d9dc37ab.mockapi.io/api/v1/products/`)
-      .then(res => res.json())
-      .then(res => {
-        const result = [...new Set(res.map(item => item.category))];
-        setCategorias(result.sort());
-      });
-  }, []);
-
 
   return (
     <div className="navbar navbar-expand-lg border-bottom bg-body-tertiary mb-2">
@@ -33,9 +20,9 @@ export default function NavBar() {
                 Categorias
               </a>
               <ul className="dropdown-menu">
-                {/* {categorias.map(categoria => <li key={categoria}><a className="dropdown-item" href={'/category/' + categoria}>{categoria}</a></li>)} */}
-                <li key='Mochilas'><a className="dropdown-item" href={'/category/Mochilas'}>Mochilas</a></li>
-                <li key='Zapatillas Deportivas'><a className="dropdown-item" href={'/category/Zapatillas Deportivas'}>Zapatillas Deportivas</a></li>
+                <li key='MOCHILAS'><a className="dropdown-item" href={'/category/MOCHILAS'}>MOCHILAS</a></li>
+                <li key='ZAPATILLAS DEPORTIVAS'><a className="dropdown-item" href={'/category/ZAPATILLAS DEPORTIVAS'}>ZAPATILLAS DEPORTIVAS</a></li>
+                <li key='ZAPATILLAS RUNNING'><a className="dropdown-item" href={'/category/ZAPATILLAS RUNNING'}>ZAPATILLAS RUNNING</a></li>
               </ul>
             </li>
             <li className="nav-item">

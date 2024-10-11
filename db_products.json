@@ -1,5 +1,6 @@
 [
   {
+    "id": "",
     "code": "7112233445566",
     "name": "Zapatilla Puma Ferrari Informal Roja",
     "price": 42000,
@@ -7,9 +8,10 @@
     "important": true,
     "active": true,
     "stock": 10,
-    "thumbnails": ["zapatilla-puma-ferrari-informal-roja.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7321564878951",
     "name": "Zapatilla Puma Ferrari Roja",
     "price": 36000,
@@ -17,9 +19,10 @@
     "important": false,
     "active": true,
     "stock": 13,
-    "thumbnails": ["zapatilla-puma-ferrari-roja.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7623134652312",
     "name": "Zapatilla Puma Ferrari Rosa",
     "price": 32000,
@@ -27,9 +30,10 @@
     "important": false,
     "active": true,
     "stock": 14,
-    "thumbnails": ["zapatilla-puma-ferrari-rosa.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7321654678643",
     "name": "Mochila I-RUN Azul",
     "price": 21000,
@@ -37,9 +41,10 @@
     "important": true,
     "active": true,
     "stock": 12,
-    "thumbnails": ["mochila-irun-azul.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7123456451234",
     "name": "Mochila I-RUN Negra",
     "price": 22000,
@@ -47,9 +52,10 @@
     "important": true,
     "active": true,
     "stock": 4,
-    "thumbnails": ["mochila-irun-negra.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7123145646748",
     "name": "Zapatillas I-Run Modelo 6905",
     "price": 24000,
@@ -57,9 +63,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-6905.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7678451231456",
     "name": "Zapatillas I-Run Modelo 6933",
     "price": 23000,
@@ -67,9 +74,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-6933.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7654612312345",
     "name": "Zapatillas I-Run Modelo 6977",
     "price": 24000,
@@ -77,9 +85,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-6977.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7564213456123",
     "name": "Zapatillas I-Run Modelo 7004",
     "price": 23400,
@@ -87,9 +96,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-7004.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7923123456123",
     "name": "Zapatillas I-Run Modelo 7031",
     "price": 23800,
@@ -97,9 +107,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-7031.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7912312312454",
     "name": "Zapatillas I-Run Modelo 7032",
     "price": 22650,
@@ -107,9 +118,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-7032.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7231234561231",
     "name": "Zapatillas I-Run Modelo 7058",
     "price": 24500,
@@ -117,9 +129,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-7058.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7123456123123",
     "name": "Zapatillas I-Run Modelo 7075",
     "price": 24600,
@@ -127,9 +140,10 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-7075.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   },
   {
+    "id": "",
     "code": "7931364215784",
     "name": "Zapatillas I-Run Modelo 7121",
     "price": 24100,
@@ -137,6 +151,6 @@
     "important": true,
     "active": true,
     "stock": 6,
-    "thumbnails": ["zapatilla-irun-7121.jpeg"]
+    "thumbnail": "https://loremflickr.com/640/480/abstract"
   }
 ]

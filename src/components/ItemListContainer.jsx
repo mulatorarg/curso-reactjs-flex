@@ -4,24 +4,14 @@ import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import { getProducts, getProductsByCategory } from '../firebase/db';
 
-import { useCartContext } from '../context/CartContext';
-
 function ItemListContainer() {
   const [products, setProducts] = useState([]);
   const { categoryName } = useParams();
 
-  const {cart, total, quantityTotal} = useCartContext();
-
   useEffect(() => {
-    //if (categoryName) {
-    //  getProductsByCategory(categoryName, setProducts);
-    //} else {
-    //  getProducts(setProducts);
-    //}
-
     categoryName ? getProductsByCategory(categoryName, setProducts) : getProducts(setProducts);
 
-    console.log(cart, total, quantityTotal);
+    //console.log(cart, total, quantityTotal);
   }, [categoryName]);
 
   return (

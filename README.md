@@ -2,4 +2,10 @@
 
 Un repo público para compartir experiencia del curso.
 
-Entregas parciales hacia el trabajo final.
+
+## Librerías Utilizadas
+
+
+
+
+npm i bootstrap firebase react react-bootstrap react-icons react-dom react-router-dom sweetalert2

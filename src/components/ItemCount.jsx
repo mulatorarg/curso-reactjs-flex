@@ -1,34 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { useCartContext } from '../context/CartContext'
+const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
-function ItemCount({ detail, count, stock }) {
+  const [count, setCount] = useState(initial);
 
-  const { addProduct } = useCartContext();
+  const btnIncrementar = () => {
+    if (count < stock) {
+      return setCount(count + 1);
+    }
+    setCount(count);
+  };
 
-  const [contador, setContador] = useState(count);
-
-  /** Sumar una unidad al contador del producto agregar al carrito. */
-  function btnIncrementar () {
-    if (contador < stock) setContador(contador + 1);
-  }
-
-  /** Restar una unidad al contador del producto agregar al carrito. */
-  function btnDecrementar() {
-    if (contador > 1) setContador(contador - 1);
-  }
-
-  /** Agregar unidades del producto al carrito. */
-  function btnComprar () {
-    addProduct(detail, contador);
-  }
+  const btnDecrementar = () => {
+    if (count === 1) return setCount(1);
+    setCount(count - 1);
+  };
 
   return (
     <div className="input-group mt-3 mx-auto shadow-sm" style={{ width: '120px!important' }}>
       <button onClick={btnDecrementar} className="btn btn-sm btn-danger"> ➖ </button>
-      <input type="text" className="form-control form-control-sm text-center" placeholder="" value={contador}  />
+      <input type="text" className="form-control form-control-sm text-center" placeholder="" value={count} />
       <button onClick={btnIncrementar} className="btn btn-sm btn-success"> ➕ </button>
-      <button onClick={btnComprar()} className="btn btn-sm btn-primary"> Agregar al Carrito </button>
+      <button onClick={onAdd(count)} className="btn btn-sm btn-primary"> Agregar al Carrito </button>
     </div>
   )
 }
