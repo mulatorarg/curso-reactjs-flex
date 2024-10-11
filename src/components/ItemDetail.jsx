@@ -1,21 +1,18 @@
 import { useContext } from "react";
-import ItemCount from './ItemCount';
+import { ItemCount } from "./ItemCount";
 import { CartContext } from "../context/CartContext";
 import Swal from "sweetalert2";
 
-function ItemDetail({ detail }) {
+export const ItemDetail = ({ detail }) => {
 
   const { addItem } = useContext(CartContext);
 
   const onAdd = (quantity) => {
-
     addItem(detail, quantity)
-
     Swal.fire({
       icon: "success",
       title: "Se agrego el producto al carrito"
     });
-
   }
 
   return (
@@ -27,10 +24,8 @@ function ItemDetail({ detail }) {
         Precio: $ {detail.price}<br />
         <span className='badge text-bg-success float-end'>{detail.category}</span><br />
         <span className='badge text-bg-info float-end'>Stock Disp: {detail.stock}</span>
-        <ItemCount stock={detail.stock} onAdd={onAdd}></ItemCount>
+        <ItemCount stock={detail.stock} onAdd={onAdd} />
       </div>
     </div>
   )
 }
-
-export default ItemDetail;

@@ -1,20 +1,38 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetail from './ItemDetail';
+import { ItemDetail } from './ItemDetail';
 import { getProduct } from '../firebase/db';
 
 
-function ItemDetailContainer() {
-  const [detail, setDetail] = useState({});
+export const ItemDetailContainer = () => {
+
+  const [detail, setDetail] = useState(null);
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
-    getProduct(id, setDetail);
+    setLoading(true)
+    getProduct(id, setDetail, setLoading, setError);
   }, [id]);
 
   return (
-    <ItemDetail detail={detail}></ItemDetail>
+
+    <>
+      {
+        loading
+          ?
+          <h5 className='text-info'>
+            <span className="spinner-border" role="status"></span>
+            Cargando Datos del Producto.
+          </h5>
+          :
+          <>
+            {error && <h2>Ups, No se encontró el producto.</h2>}
+            {detail && <ItemDetail detail={detail} />}
+          </>
+      }
+
+    </>
   )
 }
-
-export default ItemDetailContainer;

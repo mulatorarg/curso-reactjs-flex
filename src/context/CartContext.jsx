@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-
 export const CartContext = createContext(null);
 
 export const CartContextProvider = ({ children }) => {
@@ -11,7 +10,6 @@ export const CartContextProvider = ({ children }) => {
   const addItem = (item, quantity) => {
 
     const cartCopy = [...cart];
-
     const index = cartCopy.findIndex(product => product.id === item.id)
 
     if (index != -1) {
@@ -38,19 +36,19 @@ export const CartContextProvider = ({ children }) => {
   }
 
   const handleTotalItems = () => {
-    const newTotalItems = cart.reduce((acum, item) => acum + item.quantity, 0);
-    setTotalItems(newTotalItems);
+    const total = cart.reduce((acum, item) => acum + item.quantity, 0);
+    setTotalItems(total);
   }
 
   const handleTotal = () => {
-    const newTotal = cart.reduce((acum, item) => acum + item.subtotal, 0);
-    setTotal(newTotal);
+    const total = cart.reduce((acum, item) => acum + item.subtotal, 0);
+    setTotal(total);
   }
 
   useEffect(() => {
     handleTotalItems();
     handleTotal();
-  }, [cart])
+  }, []); //cart
 
   const misExports = {
     cart,

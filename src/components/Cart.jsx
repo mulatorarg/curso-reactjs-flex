@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/CartContext"
 import Swal from "sweetalert2";
 
 export const Cart = () => {
@@ -13,7 +13,6 @@ export const Cart = () => {
       title: `¿Estas seguro que deseas eliminar ${item.name} del carrito? `,
       showCancelButton: true,
       showConfirmButton: true,
-
     }).then(resp => {
       if (resp.isConfirmed) {
         removeItem(item.id)
@@ -22,11 +21,12 @@ export const Cart = () => {
           title: "Producto eliminado"
         })
       }
-    })
+    });
   }
 
   return (
     <>
+
       {totalPrice > 0 && (
         <>
           <div className="detalle">
@@ -38,10 +38,6 @@ export const Cart = () => {
           </div>
         </>
       )}
-
-
-
-
 
       {/* mapeamos los items en carrito... */}
       {cart.map((item) => (
@@ -59,9 +55,8 @@ export const Cart = () => {
         </div>
 
       ))}
+
       {/* ---------------------------- */}
-
-
 
       {
 
@@ -81,19 +76,17 @@ export const Cart = () => {
               </div>
             </div>
 
-            <div class="detalle"  >
-              <div class="dato"> </div>
-              <div class="dato"> </div>
-              <div class="dato"> </div>
-              <div class="dato"> </div>
+            <div class="detalle">
+              <div class="dato"></div>
+              <div class="dato"></div>
+              <div class="dato"></div>
+              <div class="dato"></div>
               <div class="dato">
                 <button className="btn btn-outline-success" onClick={clearCart}>
                   Vaciar carrito
                 </button>
               </div>
             </div>
-
-
 
           </>
           :
@@ -103,7 +96,6 @@ export const Cart = () => {
 
     </>
 
-  )
-}
+  );
 
-export default Cart;
+}

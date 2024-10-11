@@ -1,10 +1,8 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 
-//import { db } from "../../config/firebaseConfig";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-const CheckOut = () => {
+export const CheckOut = () => {
 
   const { cart, totalPrice, clearCart } = useContext(CartContext);
 
@@ -90,5 +88,3 @@ const CheckOut = () => {
   );
 
 };
-
-export default CheckOut;

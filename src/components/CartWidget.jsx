@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext";
 
-export default function CartWidget() {
-    const { totalItems } = useContext(CartContext)
+export const CartWidget = () => {
+  const { totalItems } = useContext(CartContext)
 
-    return (
+  return (
     <div className="btn btn-sm btn-success">
       <a href={'/cart'}>
         <img src="/logo.svg" alt="" height={30} />
@@ -15,6 +15,6 @@ export default function CartWidget() {
         </span>
       </a>
     </div>
-  )
+  );
 
 }

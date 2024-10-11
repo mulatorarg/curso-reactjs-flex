@@ -1,15 +1,14 @@
-import { Card, Col } from 'react-bootstrap';
 
-function ItemList({ listado = [] }) {
+export const ItemList = ({ listado = [] }) => {
 
   return (
     <>
       {
         listado.map(producto =>
-          <Col key={producto.id}>
-            <Card className='shadow-sm'>
+          <div className="col-lg-3 col-md-4 col-sm-12 mb-3" key={producto.id}>
+            <div className='card shadow-sm'>
               <img src={producto.thumbnail} className="rounded mx-auto d-block card-img-top p-0 m-0" alt={producto.name}></img>
-              <Card.Body>
+              <div className='card-body'>
                 <h6>{producto.name}</h6>
                 <p>Precio: $ {producto.price}</p>
                 <div className='d-flex justify-content-evenly my-2'>
@@ -18,16 +17,12 @@ function ItemList({ listado = [] }) {
                 </div>
                 <span className='badge text-bg-info float-end'>{producto.category}</span>
                 <span className='badge text-bg-info float-end'>Stock Disp: {producto.stock}</span>
-              </Card.Body>
-            </Card>
-          </Col>
+              </div>
+            </div>
+          </div>
         )
       }
     </>
   )
 
 }
-
-export default ItemList;
-
-/* onClick={addProduct(producto, 1)} */

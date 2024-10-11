@@ -1,7 +1,7 @@
 import React from "react";
-import CartWidget from './CartWidget';
+import { CartWidget } from './CartWidget';
 
-export default function NavBar() {
+export const NavBar = () => {
 
   return (
     <div className="navbar navbar-expand-lg border-bottom bg-body-tertiary mb-2">
