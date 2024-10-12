@@ -19,10 +19,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <main className="container pb-2">
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckOut />} />
-          <Route path="/product/:id" element={<ItemDetailContainer />} />
-          <Route path="/category/:categoryName" element={<ItemListContainer />} />
           <Route path="*" element={<ErrorContainer />} />
         </Routes>
       </main>
