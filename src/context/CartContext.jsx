@@ -48,7 +48,7 @@ export const CartContextProvider = ({ children }) => {
   useEffect(() => {
     handleTotalItems();
     handleTotal();
-  }, []); //cart
+  }, [cart]);
 
   const misExports = {
     cart,

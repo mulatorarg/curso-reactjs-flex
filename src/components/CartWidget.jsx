@@ -7,7 +7,7 @@ export const CartWidget = () => {
   return (
     <div className="btn btn-sm btn-success">
       <a href={'/cart'}>
-        <img src="/logo.svg" alt="" height={30} />
+        <img src="/img/cart.svg" alt="" height={30} />
         <span className="badge text-bg-success">
           {
             totalItems

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 export const Cart = () => {
 
-  const { cart, clearCart, removeItem, totalPrice } = useContext(CartContext)
+  const { cart, clearCart, removeItem, total } = useContext(CartContext)
 
   const handleDeleteItem = (item) => {
     Swal.fire({
@@ -27,7 +27,7 @@ export const Cart = () => {
   return (
     <>
 
-      {totalPrice > 0 && (
+      {total > 0 && (
         <>
           <div className="detalle">
             <div className="encabezado">Artículo</div>
@@ -60,15 +60,14 @@ export const Cart = () => {
 
       {
 
-        totalPrice > 0 ?
-          // Hay productos...
+        total > 0 ?
           <>
 
             <div class="detalle"  >
               <div class="dato"> </div>
               <div class="dato"> </div>
               <div class="dato"><h2>Total: </h2></div>
-              <div class="dato"><h2>${totalPrice}</h2></div>
+              <div class="dato"><h2>${total}</h2></div>
               <div class="dato">
                 <Link to="/checkout">
                   <button className="ms-2 btn btn-success">Comprar</button>

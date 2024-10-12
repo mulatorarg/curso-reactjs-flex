@@ -4,7 +4,7 @@ import { CartWidget } from './CartWidget';
 export const NavBar = () => {
 
   return (
-    <div className="navbar navbar-expand-lg border-bottom bg-body-tertiary mb-2">
+    <div className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div className="container">
         <a className="navbar-brand" href="/">Agusele ReactJS</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navShop" aria-controls="navShop" aria-expanded="false" aria-label="Toggle navigation">

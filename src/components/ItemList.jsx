@@ -12,7 +12,7 @@ export const ItemList = ({ listado = [] }) => {
                 <h6>{producto.name}</h6>
                 <p>Precio: $ {producto.price}</p>
                 <div className='d-flex justify-content-evenly my-2'>
-                  <a className="btn btn-sm btn-success" href={'/product/' + producto.id}>Ver</a>
+                  <a className="btn btn-sm btn-success" href={'/item/' + producto.id}>Ver</a>
                   <button className="btn btn-sm btn-primary" >Comprar</button>
                 </div>
                 <span className='badge text-bg-info float-end'>{producto.category}</span>
