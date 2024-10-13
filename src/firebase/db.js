@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, where, doc, getDoc, serverTimestamp, addDoc, setDoc } from 'firebase/firestore';
 import { app } from './config';
 
 const db = getFirestore(app);
@@ -45,4 +45,11 @@ export const getProduct = async (id, setProduct, setLoading, setError) => {
     console.log('Documento no existe 😱');
   }
   setLoading(false);
+}
+
+/** Obtener un producto según su ID pasado por parámetro */
+export const createOrder = async (orderData) => {
+  const ordersCollection = collection(db, "orders");
+  const docRef = await addDoc(ordersCollection, orderData);
+  return docRef;
 }

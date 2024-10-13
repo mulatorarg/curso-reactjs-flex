@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-export const CartContext = createContext(null);
+export const CartContext = createContext({});
 
 export const CartContextProvider = ({ children }) => {
 
@@ -36,13 +36,13 @@ export const CartContextProvider = ({ children }) => {
   }
 
   const handleTotalItems = () => {
-    const total = cart.reduce((acum, item) => acum + item.quantity, 0);
-    setTotalItems(total);
+    const newTotal = cart.reduce((acum, item) => acum + item.quantity, 0);
+    setTotalItems(newTotal);
   }
 
   const handleTotal = () => {
-    const total = cart.reduce((acum, item) => acum + item.subtotal, 0);
-    setTotal(total);
+    const newTotal = cart.reduce((acum, item) => acum + item.subtotal, 0);
+    setTotal(newTotal);
   }
 
   useEffect(() => {

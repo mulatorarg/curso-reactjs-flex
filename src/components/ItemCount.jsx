@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import React, { useState } from 'react';
 
 export const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [count, setCount] = useState(initial);
